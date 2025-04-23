@@ -1,1 +1,29 @@
-# Placeholder for restrict_locations.json
+
+{
+  "properties": {
+    "displayName": "Restrict resource locations",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Only allow specific Azure regions for resource deployment",
+    "parameters": {
+      "allowedLocations": {
+        "type": "Array",
+        "metadata": {
+          "description": "The list of allowed locations for resource deployment",
+          "displayName": "Allowed locations"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "location",
+          "in": "[parameters('allowedLocations')]"
+        }
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
+}
