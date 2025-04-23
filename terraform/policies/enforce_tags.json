@@ -1,1 +1,28 @@
-# Placeholder for enforce_tags.json
+{
+  "properties": {
+    "displayName": "Enforce resource tagging",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Ensures all resources have required tags",
+    "parameters": {
+      "requiredTags": {
+        "type": "Array",
+        "metadata": {
+          "description": "List of required tags",
+          "displayName": "Required Tags"
+        }
+      }
+    },
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "[concat('tags[', parameters('requiredTags')[0], ']')]",
+          "exists": "true"
+        }
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
+}
