@@ -1,1 +1,1 @@
-# Placeholder for README.md
+This framework automates and optimizes virtual machine security and cloud resource usage across large-scale Azure deployments using PowerShell, Azure CLI, Terraform, and Machine Learning. It enhances compliance, reduces costs, and improves performance.
