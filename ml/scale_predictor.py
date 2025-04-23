@@ -1,0 +1,1 @@
+# Placeholder for scale_predictor.py
